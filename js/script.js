@@ -10,38 +10,57 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
 
     if (playerSelection === computerSelection) {
-        return "This is a draw";
+        return "This is a tie";
     }
 
-    else if (playerSelection === "rock" && computerSelection === "paper") {
-        return "You lose! Paper beats rock.";
-    }
-
-    else if (playerSelection === "rock" && computerSelection === "scissors") {
-        return "You win! Rock crushes scissors.";
-    }
-
-    else if (playerSelection === "paper" && computerSelection === "rock") {
-        return "You win! Paper beats rock.";
-    }
-
-    else if (playerSelection === "paper" && computerSelection === "scissors") {
-        return "You lose! Scissors cuts paper.";
-    }
-
-    else if (playerSelection === "scissors" && computerSelection === "rock") {
-        return "You lose! Rock crushes scissors.";
-    }
-
-    else if (playerSelection === "scissors" && computerSelection === "paper") {
-        return "You win! Scissors cuts paper.";
-    
+    else if (playerSelection === "rock" && computerSelection === "paper" ||
+             playerSelection === "paper" && computerSelection === "scissors" ||
+             playerSelection === "scissors" && computerSelection === "rock") {
+        return "Computer wins!";
     } else {
-        return "";
+        return "You win!";
     }
 
 }
 
-const playerSelection = prompt("Choose your hand: Rock, Paper, or Scissors").toLowerCase();
+
 const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+
+
+// This function plays a 5 round game that keeps score and reports a winner or loser at the end.
+function game() {
+
+    let userScore = 0;
+    let computerScore = 0;
+    
+
+    for (i = 0; i < 5; i++) {
+
+        const playerSelection = prompt("Choose your hand: Rock, Paper, or Scissors").toLowerCase();
+        const result = playRound(playerSelection, computerSelection);
+
+        if (result === "Computer wins!") {
+                computerScore++;
+            } 
+
+        else if (result === "You win!") {
+                    userScore++;
+                 }
+
+    }
+
+    if (userScore < computerScore) {
+        return "You lost! Computer wins the game."
+    }
+
+    else if (userScore > computerScore) {
+        return "You won! You have beaten computer."
+    } else {
+        return "The game is a tie! Do you want to play again?"
+    }
+
+  
+}
+
+const finalWinner = game();
+console.log(finalWinner);
