@@ -1,15 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Rowdies:wght@700&display=swap");
 
 body {
   background-color: #4a7c59;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .big-heading {
-  color: #faf3dd;
-  font-family: "Roboto", sans-serif;
-  font-weight: 900;
+  color: #bc8034;
+  font-family: "Rowdies", cursive;
+  font-weight: 700;
   font-size: 3rem;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .hand {
@@ -21,10 +26,90 @@ body {
 
 .rps-button {
   border-radius: 2rem;
+  margin: 2rem;
 }
 
 .btn-image {
   background: #000;
   width: 8rem;
   height: 8rem;
+}
+
+#result,
+#player-score,
+#computer-score {
+  font-family: "Roboto", sans-serif;
+  color: #faf3dd;
+  font-weight: 700;
+}
+
+#result {
+  font-size: 2rem;
+  margin: 2rem;
+}
+
+#player-score,
+#computer-score {
+  font-size: 1.5rem;
+  margin: 0.2rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .big-heading {
+    font-family: "Rowdies", cursive;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .hand {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  #result {
+    font-size: 1.5rem;
+    margin: 2rem;
+  }
+
+  #player-score,
+  #computer-score {
+    font-size: 1rem;
+    margin: 0.2rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .big-heading {
+    font-family: "Rowdies", cursive;
+    font-weight: 700;
+    font-size: 1.7rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .hand {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  .btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #result {
+    font-size: 1.3rem;
+    margin: 2rem;
+  }
+
+  #player-score,
+  #computer-score {
+    font-size: 1rem;
+    margin: 0.2rem;
+  }
 }

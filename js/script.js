@@ -19,10 +19,7 @@ function playRound(playerSelection) {
 
 let playerScore = 0;
 let computerScore = 0;
-const body = document.querySelector("body");
-const resultDiv = document.createElement("div");
-const playerScoreDiv = document.createElement("div");
-const computerScoreDiv = document.createElement("div");
+const resultDiv = document.getElementById("result");
 
 const buttons = document.querySelectorAll(".rps-button");
 buttons.forEach((button) => {
@@ -30,6 +27,22 @@ buttons.forEach((button) => {
     const playerSelection = event.currentTarget.value;
     const gameResult = playRound(playerSelection);
     resultDiv.textContent = gameResult;
-    body.appendChild(resultDiv);
+    if (gameResult.startsWith("You win")) playerScore++;
+    else if (gameResult.startsWith("You lose")) computerScore++;
+    document.getElementById(
+      "player-score"
+    ).innerText = `Player: ${playerScore}`;
+    document.getElementById(
+      "computer-score"
+    ).innerText = `Computer: ${computerScore}`;
+    if (playerScore === 5) {
+      alert("You have won the round!");
+      playerScore = 0;
+      computerScore = 0;
+    } else if (computerScore === 5) {
+      alert("You have lost the round!");
+      playerScore = 0;
+      computerScore = 0;
+    }
   });
 });
