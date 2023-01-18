@@ -113,3 +113,40 @@ body {
     margin: 0.2rem;
   }
 }
+@media screen and (max-width: 400px) {
+  .big-heading {
+    font-family: "Rowdies", cursive;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .hand {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .rps-button {
+    border-radius: 2rem;
+    margin: 1.2rem;
+  }
+
+  .btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #result {
+    font-size: 1.2rem;
+    margin: 2rem;
+  }
+
+  #player-score,
+  #computer-score {
+    font-size: 1rem;
+    margin: 0.2rem;
+  }
+}
